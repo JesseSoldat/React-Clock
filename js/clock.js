@@ -7,17 +7,35 @@ componentDidMount(){
 	this.startTimer();
 },
 
-componentWilUnmount(){
+getInitialState(){
+	return {
+		timeString: this.getTimeString()
+	};
+},
 
+componentWilUnmount(){
+	if(this.timer) {
+		clearInterval(this.timer);
+	}
+},
+
+getTimeString(){
+	let format = this.props.format;
+	return moment().format(format);
 },
 
 startTimer(){
-
+	if(this.timer){
+		clearInterval(this.timer);
+	}
+	this.timer = setInterval( () => {
+		this.setState(this.getInitialState());
+	}, 1000);
 },
 
 render(){
 	return(
-	<div>
+	<div>{this.state.timeString}
 	</div>
 	)
 }

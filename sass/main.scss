@@ -1,6 +1,13 @@
-// Put any @imports here
-// See Readme for a list of supported ones
+@import "bourbon";
+@import "neat";
+@import "font-awesome";
 
 body {
   background: #e2ebf3;
+}
+#clock {
+
+	font-size: 50px;
+	margin: 100px auto;
+	text-align: center
 }

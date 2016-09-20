@@ -48,12 +48,14 @@ exports['default'] = _react2['default'].createClass({
 		this.timer = setInterval(function () {
 			_this.setState(_this.getInitialState());
 		}, 1000);
+
+		console.log(this.state.timeString);
 	},
 
 	render: function render() {
 		return _react2['default'].createElement(
 			'div',
-			null,
+			{ id: 'clock' },
 			this.state.timeString
 		);
 	}
@@ -85,7 +87,8 @@ var _clock2 = _interopRequireDefault(_clock);
 _reactDom2['default'].render(_react2['default'].createElement(
 	'div',
 	null,
-	_react2['default'].createElement(_clock2['default'], { format: '#hhmmss' })
+	_react2['default'].createElement(_clock2['default'], { format: 'hh:mm:ss' }),
+	_react2['default'].createElement(_clock2['default'], { format: 'MMMM Do YYYY, h:mm:ss a' })
 ), document.querySelector('#root'));
 
 },{"./clock":1,"moment":4,"react":174,"react-dom":5}],3:[function(require,module,exports){

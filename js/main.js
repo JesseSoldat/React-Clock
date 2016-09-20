@@ -5,7 +5,8 @@ import Clock from './clock';
 
 ReactDom.render(
 	<div>
-		<Clock format="#hhmmss"/>
+		<Clock format="hh:mm:ss"/>
+		<Clock format='MMMM Do YYYY, h:mm:ss a'/>
 	</div>,
 	document.querySelector('#root')
 );

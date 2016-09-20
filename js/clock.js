@@ -31,11 +31,15 @@ startTimer(){
 	this.timer = setInterval( () => {
 		this.setState(this.getInitialState());
 	}, 1000);
+
+	console.log(this.state.timeString);
 },
+
+
 
 render(){
 	return(
-	<div>{this.state.timeString}
+	<div id="clock">{this.state.timeString}
 	</div>
 	)
 }
